@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  #memes
+    for meme in memes
+      .perGif
+        img(src= meme.url id= meme.imageId)
+        form.comment
+          input(type= 'text' name= 'message' placeholder= 'Write a comment')
+          input(type= 'submit' value= 'Post Comment')
+  form.newGif
+    input(type= 'text' name='url' placeholder= 'paste gif url')
+    input(type= 'submit' name= 'submit')
