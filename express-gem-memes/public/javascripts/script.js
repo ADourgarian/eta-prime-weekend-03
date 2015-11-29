@@ -58,9 +58,10 @@ $(document).ready(function(){
 			url: 'comments',
 			type: 'post',
 			data: newComment
-		}).done(function(dis){});
-		var $newComment = $('<p>');
-		$newComment.html(newComment[0].value);
-		$(this).parent().append($newComment);
+		})
+
+			var $newComment = $('<p>');
+			$newComment.html(newComment[0].value);
+			$(this).parent().append($newComment);
 	})
 })
