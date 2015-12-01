@@ -52,8 +52,7 @@ $(document).ready(function(){
 		// newComment[1] = {};
 		// newComment[1].name = 'imageId';
 		// newComment[1].value = $(this).parent().find('img')[0].id;
-		var object = {'message':'hi','imageId':'3'}
-		console.log(newComment);
+		var object = {'message':newComment[0].value,'imageId':$(this).parent().find('img')[0].id}
 		$.ajax({
 			url: 'comments',
 			type: 'post',

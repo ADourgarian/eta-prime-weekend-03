@@ -1,4 +1,6 @@
 var express = require('express');
+var fs = require('fs');
+var path = require('path');
 var router = express.Router();
 var memes = require('../public/images/memes.json');
 
