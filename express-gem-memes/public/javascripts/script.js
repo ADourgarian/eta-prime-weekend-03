@@ -3,7 +3,6 @@ $(document).ready(function(){
 	$.ajax({
 		url: 'comments'
 	}).done(function(prevComments){
-		console.log(prevComments);
 		prevComments.forEach(function(elem){
 			console.log(elem.imageId)
 			var a = elem.imageId;
@@ -50,14 +49,15 @@ $(document).ready(function(){
 	$('.comment').on('submit',function(event){
 		event.preventDefault();
 		var newComment = $(this).serializeArray();
-		newComment[1] = {};
-		newComment[1].name = 'imageId';
-		newComment[1].value = $(this).parent().find('img')[0].id;
+		// newComment[1] = {};
+		// newComment[1].name = 'imageId';
+		// newComment[1].value = $(this).parent().find('img')[0].id;
+		var object = {'message':'hi','imageId':'3'}
 		console.log(newComment);
 		$.ajax({
 			url: 'comments',
 			type: 'post',
-			data: newComment
+			data: object
 		})
 
 			var $newComment = $('<p>');
